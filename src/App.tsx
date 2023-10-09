@@ -1,9 +1,12 @@
+import Header from "./Components/Header"
+import Search from "./Components/Search"
 function App() {
 
   return (
-    <h1 className="text-3xl font-bold underline">
-    Emoji Search Project Setup
-  </h1>
+    <>
+    <Header/>
+    <Search/>
+    </>
   )
 }
 
