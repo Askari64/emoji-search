@@ -4,7 +4,9 @@ import CardContainer from "./CardContainer";
 
 function Search() {
   const [input, setInput] = useState("");
-  const [searchResult, setSearchResult] = useState<{ title: string; symbol: string }[]>([]);
+  const [searchResult, setSearchResult] = useState<
+    { title: string; symbol: string }[]
+  >([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -16,21 +18,25 @@ function Search() {
     });
     setSearchResult(searchedItems);
   };
-  
 
   return (
     <div className="flex justify-center flex-col items-center font-serif font-normal tracking-normal">
       <div>
         <input
-          className="rounded border-black mt-4"
+          className="rounded-lg border-2 border-gray-300 mt-4 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
           type="search"
           placeholder="smiley face"
           value={input}
           onChange={handleChange}
         />
-        <button onClick={searchFunc}>Search</button>
+        <button
+          className="bg-blue-600 text-white rounded-lg px-4 py-2 ml-2 hover:bg-blue-700 transition-colors duration-300"
+          onClick={searchFunc}
+        >
+          Search
+        </button>
       </div>
-      <div>
+      <div className="justify-center items-center mt-3">
         {searchResult.map((emoji) => (
           <CardContainer
             key={emoji.title}
