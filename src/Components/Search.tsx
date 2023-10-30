@@ -14,7 +14,7 @@ function Search() {
 
   const searchFunc = () => {
     let searchedItems = emojiList.filter((emoji) => {
-      return emoji.keywords.includes(input);
+      return emoji.keywords.includes(input.toLocaleLowerCase());
     });
     setSearchResult(searchedItems);
   };
